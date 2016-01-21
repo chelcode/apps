@@ -1,42 +1,51 @@
 <div ng-repeat="session in sessionInfo">    
     <div class="container panel panel-primary">
-      <p class="clearfix">
-        <span class="pull-left">{{session.id}}</span>
-        <span class="pull-right">{{session.title}}</span>
+      <span class="clearfix">
+        <h4 class="pull-left">{{session.id}}</h4>
+        <h4 class="pull-right">{{session.title}}</h4>
+      </span>
       
-      </p>
-      
+  
       <ul  class="nav nav-pills">
         <li class="active">
-          <a  href="#{{session.id}}a" data-toggle="tab">Description</a>
+          <a  href="#{{session.index}}a" data-toggle="tab">Description</a>
         </li>
-        <li><a href="#{{session.id}}b" data-toggle="tab">Schedule</a>
+        <li><a href="#{{session.index}}b" data-toggle="tab">Schedule</a>
         </li>
-        <li><a href="#{{session.id}}c" data-toggle="tab">Speakers</a>
+        <li><a href="#{{session.index}}c" data-toggle="tab">Speakers</a>
         </li>
       </ul>
-
-      <div class="tab-content clearfix">
-        <div class="tab-pane active" id="{{session.id}}a">
+      
+      <div class="tab-content">
+        <div class="tab-pane active" id="{{session.index}}a">
           <h3>Description</h3>
           {{session.description}}
         </div>
-        <div class="tab-pane" id="{{session.id}}b">
+        <div class="tab-pane" id="{{session.index}}b">
           <h3>Schedule</h3>
-          
+          Topic 1: {{session.sessionTopic1}}<br>
+          Topic1 Name: {{session.sessionTopic1Name}}<br>         
+          Topic 2: {{session.sessionTopic2}}<br>
+          Topic 2 Name: {{session.sessionTopic2Name}}<br>  
+          Topic 3: {{session.sessionTopic3}}<br>
+          Topic 3 Name: {{session.sessionTopic3Name}}<br>  
+          Topic 4: {{session.sessionTopic4}}<br>
+          Topic 4 Name: {{session.sessionTopic4Name}}<br>  
+          Topic 5: {{session.sessionTopic5}}<br>
+          Topic 5 Name: {{session.sessionTopic5Name}}<br>  
+          pdfUrl: {{session.pdfUrl}}<br>
+          videoUrl: {{session.videoUrl}}<br>
         </div>
-        <div class="tab-pane" id="{{session.id}}c">
+        <div class="tab-pane" id="{{session.index}}c">
           <h3>Speakers</h3>
           <div ng-repeat="speaker in session.speakerInfo">
-          <p>{{speaker.name}}, 
-          <span ng-if="vm.testObject">
+          <p>{{speaker.name}},          
             {{speaker.organization}}, {{speaker.email}}, {{speaker.jobTitle}}
-          </span></p>
+         </p>
           </div>
         </div>
         
       </div>
-      
     </div>
     <hr>
 </div> 
