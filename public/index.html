@@ -15,11 +15,19 @@
   </head>
 
   <body ng-controller="Controller">
-    
-    <header>
-      <h1 class="text-center">GTC SESSIONS</h1>
-    </header>
+    <div class="container">
+      <header>
+        <h1 class="text-center">GTC SESSIONS</h1>
+      </header>
+
+      <div class="clearfix">
+        <button ng-click="downloadCSV()" class="pull-right btn btn-primary">CSV download</button>
+      </div>
+
+      <br><div id="message">Loading sessions...</div>
+    </div>
+
     <session info="sessions"></session>
-    
+   
   </body>
 </html>
